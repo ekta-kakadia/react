@@ -1,0 +1,42 @@
+{
+  "paths": [
+    {
+      "name": "/api",
+      "lambdaFunction": "backend",
+      "privacy": {
+        "private": true,
+        "auth": [
+          "/POST",
+          "/GET",
+          "/PUT",
+          "/PATCH",
+          "/DELETE"
+        ]
+      },
+      "policyResourceName": "/api"
+    }
+  ],
+  "resourceName": "api4235ba4c",
+  "apiName": "api4235ba4c",
+  "functionArns": [
+    {
+      "lambdaFunction": "backend"
+    }
+  ],
+  "privacy": {
+    "auth": 1,
+    "unauth": 0,
+    "authRoleName": "amplify-reactapp-staging-60034-authRole",
+    "unAuthRoleName": "amplify-reactapp-staging-60034-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "backend",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}

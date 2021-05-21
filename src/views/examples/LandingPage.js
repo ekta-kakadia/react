@@ -39,6 +39,7 @@ import {
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import LandingPageHeader from "components/Headers/LandingPageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
+import { API } from "aws-amplify";
 
 function LandingPage() {
   document.documentElement.classList.remove("nav-open");
@@ -48,6 +49,12 @@ function LandingPage() {
       document.body.classList.remove("profile-page");
     };
   });
+
+  const handleSendMessage = async () => {
+    console.log(API);
+    const price = await API.get("api4235ba4c", "/api/users");
+    console.log(price);
+  }
   return (
     <>
       <ExamplesNavbar />
@@ -358,7 +365,7 @@ function LandingPage() {
                   />
                   <Row>
                     <Col className="ml-auto mr-auto" md="4">
-                      <Button className="btn-fill" color="danger" size="lg">
+                      <Button className="btn-fill" color="danger" size="lg" onClick={handleSendMessage}>
                         Send Message
                       </Button>
                     </Col>
